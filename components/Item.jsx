@@ -1,7 +1,10 @@
-import { useState } from "react"
+import { useContext } from "react"
+import { ItemData } from "../pages"
 
 export const Item = () => {
+    const clickItem = useContext(ItemData);
+
     return (
-        <div></div>
+        <div onClick={clickItem}></div>
     )
 }

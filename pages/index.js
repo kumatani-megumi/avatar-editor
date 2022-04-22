@@ -1,12 +1,18 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { AvatarMenuData } from "../src/AvatarMenuData";
+
+export const ItemData = createContext();
 
 export default function Home(active) {
   const [activeTab, setActiveTab] = useState(active);
-  const [ItemData, setItemData] = useState([]);
+  const [itemData, setItemData] = useState(false);
+
+  const ClickItem = () => {
+    setItemData(!itemData);
+  };
 
   return (
     <div className={styles.container}>
@@ -34,7 +40,7 @@ export default function Home(active) {
             return (
               <div className="tabItemInner" key={contents}>
                 {/* アバターリスト */}
-                {activeTab === id ? contents : ""}
+                <ItemData.Provider value={ClickItem}>{activeTab === id ? contents : ""}</ItemData.Provider>
               </div>
             );
           })}

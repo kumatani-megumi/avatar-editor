@@ -1,17 +1,18 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { HairData } from "../src/HairData"
 import { Item } from "../components/Item"
 
-export const Hair = (props) => {
-    const {ItemData} = props
+
+export const Hair = () => {
 
     return (
       <>
-      {HairData.map((item,id) =>
-      <div className="hairItem" onClick={() => setHairItem(id)}>
+      <Item className="hairItem">
+      {HairData.map((item) =>
         {item.contents}
-      </div>
       )}
+      </Item>
+
       </>
     )
 }
