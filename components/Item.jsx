@@ -5,6 +5,6 @@ export const Item = () => {
     const clickItem = useContext(ItemData);
 
     return (
-        <div onClick={clickItem}></div>
+        <div onClick={() => {clickItem}} className= {clickItem ? "active" : ""} ></div>
     )
 }

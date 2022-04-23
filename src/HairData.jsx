@@ -1,11 +1,11 @@
 export const HairData = [
     {
-        contents: "aaa",
+        hair: "aaa",
     },
     {
-        contents: "2222"
+        hair: "2222"
     },
     {
-        contents: "3333"
+        hair: "3333"
     },
 ];

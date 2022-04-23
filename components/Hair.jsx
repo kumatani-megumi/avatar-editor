@@ -9,7 +9,7 @@ export const Hair = () => {
       <>
       <Item className="hairItem">
       {HairData.map((item) =>
-        {item.contents}
+        {item.hair}
       )}
       </Item>
 
