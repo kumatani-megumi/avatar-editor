@@ -1,18 +1,16 @@
-import { useContext, useState } from "react"
+import { useContext } from "react"
 import { HairData } from "../src/HairData"
-import { Item } from "../components/Item"
-
+import { ItemData } from "../pages"
 
 export const Hair = () => {
+  const {clickItem,setClickItem} = useContext(ItemData);
 
     return (
       <>
-      <Item className="hairItem">
-      {HairData.map((item) =>
-        {item.hair}
+      {HairData.map((hairItem) =>
+              <div className="Item" key={hairItem} onClick={()=> setClickItem({...clickItem,hair: hairItem.hair})}>{hairItem.hair}
+              </div>
       )}
-      </Item>
-
       </>
     )
 }

@@ -1,15 +1,17 @@
+import { Face } from "../components/Face"
 import { Hair } from "../components/Hair";
+
 
 export const AvatarMenuData = [
     {
         id: 0,
         icon: "あああ",
-        contents: <Hair />,
+        contents: <Face />,
     },
     {
         id: 1,
         icon: "いいい",
-        contents: "2222"
+        contents: <Hair />,
     },
     {
         id: 2,

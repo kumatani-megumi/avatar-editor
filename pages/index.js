@@ -8,10 +8,18 @@ export const ItemData = createContext();
 
 export default function Home(active) {
   const [activeTab, setActiveTab] = useState(active);
-  const [itemData, setItemData] = useState(false);
+  const [clickItem, setClickItem] = useState({
+    face: "aaa",
+    hair: "aaa",
+    eyebrows: "aaa",
+    eyes: "aaaa",
+    nose: "aaa",
+    mouth: "aaa",
+  });
 
-  const ClickItem = () => {
-    setItemData(!itemData);
+  const value = {
+    clickItem,
+    setClickItem,
   };
 
   return (
@@ -22,6 +30,8 @@ export default function Home(active) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* アバター画像 */}
+      <div>{clickItem.face}</div>
+      <div>{clickItem.hair}</div>
       {/* アバターメニュー */}
       <ul className="AvatarMenu">
         {AvatarMenuData.map((tab, id) => {
@@ -40,7 +50,7 @@ export default function Home(active) {
             return (
               <div className="tabItemInner" key={contents}>
                 {/* アバターリスト */}
-                <ItemData.Provider value={ClickItem}>{activeTab === id ? contents : ""}</ItemData.Provider>
+                <ItemData.Provider value={value}>{activeTab === id ? contents : ""}</ItemData.Provider>
               </div>
             );
           })}
